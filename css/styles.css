@@ -615,7 +615,7 @@ img {
   top: 0;
   padding: 63px 24px;
   transform: translateY(100%);
-  transition: transform 250ms var(--calc-animation) ease;
+  transition: transform 250ms var(--calc-animation);
 }
 
 .galery-link {
