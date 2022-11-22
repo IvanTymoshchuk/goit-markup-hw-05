@@ -49,6 +49,10 @@ ul {
 
 /* header */
 
+.header{
+  border: 1px solid #ECECEC;
+}
+
 .header-icon {
   margin-right: 10px;
   fill: currentColor;
@@ -109,11 +113,12 @@ ul {
 /* site-nav */
 
 .nav-link {
-  padding: 32px 32px;
+  padding: 32px 0;
 }
 
 .contact-link,
 .nav-link {
+  position: relative;
   display: block;
   color: var(--primary-text-color);
   font-weight: 500;
@@ -125,9 +130,9 @@ ul {
 
 .nav-link.current::after {
   content: "";
-  position: relative;
+  position: absolute;
   display: block;
-  top: 28px;
+  bottom: -1px;
   width: 100%;
   height: 4px;
   background-color: var(--actent-color);
@@ -220,9 +225,11 @@ ul {
   line-height: 1.72;
 }
 .about-title {
+  font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
+  margin-bottom: 10px;
 }
 
 .work-list {
@@ -362,6 +369,10 @@ img {
   text-align: center;
   border: 4px solid transparent;
   cursor: pointer;
+
+  transition: color 250ms var(--calc-animation),
+      background-color 250ms var(--calc-animation),
+    box-shadow 250ms var(--calc-animation);
 }
 
 .button-portfolio:hover,
@@ -386,12 +397,17 @@ img {
   height: 100%;
   left: 0;
   top: 0;
-  background: rgba(47, 48, 58, 0.4);
+  background-color: rgba(47, 48, 58, 0.4);
+  transition: background-color 250ms var(--calc-animation);
 }
 
 .backdrop.is-hidden {
   opacity: 0;
+  visibility: hidden;
+  
   pointer-events: none;
+  transition:250ms var(--calc-animation);
+  
 }
 
 .modal {
@@ -512,13 +528,14 @@ img {
   border-radius: 50%;
   color: var(--icon-color);
 
-  transition: background 250ms var(--calc-animation);
+  transition: background-color 250ms var(--calc-animation),
+  color 250ms var(--calc-animation);
 }
 
 .link-icon:focus,
 .link-icon:hover {
   color: var(--primary-white-color);
-  background: var(--actent-color);
+  background-color: var(--actent-color);
 }
 
 /* Reg-custom */
@@ -551,7 +568,9 @@ img {
   height: 100%;
   color: var(--icon-color);
 
-  transition: color 250ms var(--calc-animation);
+  transition: color 250ms var(--calc-animation),
+  border-color 250ms var(--calc-animation),
+  filrer 250ms var(--calc-animation);
 }
 
 .box-icon-iteam {
@@ -565,6 +584,7 @@ img {
   border-color: var(--actent-color);
   color: var(--actent-color);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  
 }
 
 /* Social */
@@ -588,7 +608,7 @@ img {
 
 .icon-social {
   color: var(--primary-white-color);
-  background: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .product-thum {
@@ -596,7 +616,7 @@ img {
   bottom: 0;
   width: 370px;
   height: 70px;
-  background: rgba(47, 48, 58, 0.8);
+  background-color: rgba(47, 48, 58, 0.8);
 }
 
 /* portfolio bg */
@@ -611,7 +631,7 @@ img {
   font-size: 18px;
   line-height: 1.56;
   color: var(--primary-white-color);
-  background: rgba(33, 150, 243, 0.9);
+  background-color: rgba(33, 150, 243, 0.9);
   top: 0;
   padding: 63px 24px;
   transform: translateY(100%);
@@ -621,9 +641,6 @@ img {
 .galery-link {
   text-decoration: none;
   color: var(--primary-text-color);
-  transform: translateY(100%);
-  transition: transform 250ms var(--calc-animation);
-  position: relative;
 }
 
 .galery-link:hover .overlay,
