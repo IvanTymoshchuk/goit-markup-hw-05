@@ -72,12 +72,13 @@ ul {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
-  margin-top: 34px;
+  margin-top: 50px;
 }
 
 .project-titles {
   width: calc((100% - 60px) / 3);
   border: 1px solid #eeeeee;
+  transform: box-shadow 250ms var(--calc-animation);
 }
 
 .project-titles:hover,
@@ -398,7 +399,8 @@ img {
   left: 0;
   top: 0;
   background-color: rgba(47, 48, 58, 0.4);
-  transition: background-color 250ms var(--calc-animation);
+  transition: opacity var(--calc-animation),
+  visibility var(--calc-animation);
 }
 
 .backdrop.is-hidden {
@@ -406,7 +408,7 @@ img {
   visibility: hidden;
   
   pointer-events: none;
-  transition:250ms var(--calc-animation);
+ 
   
 }
 
@@ -569,8 +571,7 @@ img {
   color: var(--icon-color);
 
   transition: color 250ms var(--calc-animation),
-  border-color 250ms var(--calc-animation),
-  filrer 250ms var(--calc-animation);
+  border-color 250ms var(--calc-animation);
 }
 
 .box-icon-iteam {
